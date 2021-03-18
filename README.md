@@ -1,2 +1,2 @@
 # SharePoint Pnp Js
-Todos os códigos do curso no youtube de como utilizar o Pnp Js no SharePoint.
+Nessa branch, você terá acesso a todo o código fonte da nossa aula de como manipular os campos lookup
