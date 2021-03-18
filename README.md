@@ -9,7 +9,10 @@ Nesse vídeo aprendemos como adicionar o select, filter e realizar consulta em c
 
 ```
 function getItem(){
-    $pnp.sp.web.lists.getByTitle("Atividades").items.select("Title", "Id", "Lista/Title", "Lista/Id").filter("Title eq 'Anderson'").expand("Lista")
+    $pnp.sp.web.lists.getByTitle("Atividades").items
+    .select("Title", "Id", "Lista/Title", "Lista/Id")
+    .filter("Title eq 'Anderson'")
+    .expand("Lista")
     .get().then(function(res){
 
         console.log(res);
