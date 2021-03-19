@@ -2,7 +2,8 @@
 
 Para realizar consultas utilizando camlquery vamos iremos utilizar a função abaixo.
 
-mas caso em nossa lista tenha algum campo lookup, precisaremos adicionar um paramentro na função .getItemsByCAMLQuery(camlquery, "FieldValuesAsText") ou utilizar a função renderListDataAsStream(camlquery) 
+mas caso em nossa lista tenha algum campo lookup, precisaremos adicionar um paramentro na função 
+```.getItemsByCAMLQuery(camlquery, "FieldValuesAsText")``` ou utilizar a função ```renderListDataAsStream(camlquery)``` 
 
 ```
 function getItem(){
