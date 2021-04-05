@@ -17,6 +17,7 @@
             <th>ID</th>
             <th>Titulo</th>
             <th>Lookup</th>
+            <th>Anexos</th>
             <th>Acoes</th>
         </thead>
         <tbody id="mytable">

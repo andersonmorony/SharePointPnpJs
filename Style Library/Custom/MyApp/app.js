@@ -64,9 +64,9 @@ function getItem(){
     // .renderListDataAsStream(camlquery)
     // .getItemsByCAMLQuery(camlquery, "FieldValuesAsText")
     .items
-    .select("Title", "Id", "Lista/Title", "Lista/Id")
+    .select("*", "AttachmentFiles", "Lista/Title", "Lista/Id")
     // .filter("Title eq 'Anderson'")
-    .expand("Lista")
+    .expand("Lista", "AttachmentFiles")
     .top(2)
     .getPaged()
     .then(function(res){
@@ -82,6 +82,21 @@ function getItem(){
         
             html += `<tr><td>${value.Id}</td><td>${value.Title}</td>           
             <td>${value.Lista === undefined ? "" : value.Lista.Title}</td> 
+            <td>`;
+
+
+            if(value.Attachments){
+                value.AttachmentFiles.map(function(att){
+
+                    html+= `<a href="${att.ServerRelativeUrl}">${att.FileName}</a>`;
+
+                })
+            }else{
+                html+="Sem anexos..."
+            }
+
+
+            html+=`</td>
             <td>
             <button type="button" id="btn-get" data-id="${value.Id}" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Edit
@@ -158,6 +173,21 @@ function getpaged(page)
         
             html += `<tr><td>${value.Id}</td><td>${value.Title}</td>           
             <td>${value.Lista === undefined ? "" : value.Lista.Title}</td> 
+            <td>`;
+
+
+            if(value.Attachments){
+                value.AttachmentFiles.map(function(att){
+
+                    html+= `<a href="${att.ServerRelativeUrl}">${att.FileName}</a>`;
+
+                })
+            }else{
+                html+="Sem anexos..."
+            }
+
+
+            html+=`</td>
             <td>
             <button type="button" id="btn-get" data-id="${value.Id}" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Edit
