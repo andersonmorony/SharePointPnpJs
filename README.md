@@ -8,8 +8,8 @@ function getItem(){
     
     $pnp.sp.web.lists.getByTitle("Atividades")
     .items
-    .select("*", "**AttachmentFiles**", "Lista/Title", "Lista/Id")
-    .expand("Lista", "**AttachmentFiles**")
+    .select("*", "AttachmentFiles", "Lista/Title", "Lista/Id")
+    .expand("Lista", "AttachmentFiles")
     .top(2)
     .getPaged()
     .then(function(res){
